@@ -1,0 +1,184 @@
+
+// Custom Theming for Angular Material
+// For more information: https://material.angular.io/guide/theming
+@use '@angular/material' as mat;
+// Plus imports for other components in your app.
+
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+@include mat.core();
+
+// // Define the palettes for your theme using the Material Design palettes available in palette.scss
+// // (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// // hue. Available color palettes: https://material.io/design/color/
+// $ewa-primary: mat.define-palette(mat.$indigo-palette);
+// $ewa-accent: mat.define-palette(mat.$pink-palette, A200, A100, A400);
+
+// // The warn palette is optional (defaults to red).
+// $ewa-warn: mat.define-palette(mat.$red-palette);
+
+// // Create the theme object. A theme consists of configurations for individual
+// // theming systems such as "color" or "typography".
+// $ewa-theme: mat.define-light-theme((
+//   color: (
+//     primary: $ewa-primary,
+//     accent: $ewa-accent,
+//     warn: $ewa-warn,
+//   ),
+//   typography: mat.define-typography-config(),
+//   density: 0
+// ));
+
+// // Include theme styles for core and each component used in your app.
+// // Alternatively, you can import and @include the theme mixins for each component
+// // that you are using.
+// @include mat.all-component-themes($ewa-theme);
+
+/* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+body, button, .mat-icon-button, h1 {
+    font-family: 'Cairo', sans-serif !important;
+  }
+  h1, h2, h3, h4, h5, h6,p, a,div, .text {
+    font-family: 'Cairo', sans-serif !important;
+  }
+  $ewa-primary:  (
+    50 : #f3f1ff,
+    100 : #e1dcff,
+    200 : #d4ccca,
+    300 : #dacac6,
+    400 : #d2b3ab,
+    500 : #d57a61,
+    600 : #c56953,
+    700 : #c8674f,
+    800 : #ca674f,
+    900 : #CC5232,
+    A100 : #ffffff,
+    A200 : #ffffff,
+    A400 : #fdfdff,
+    A700 : #e7e4ff,
+    contrast: (
+        50 : #000000,
+        100 : #000000,
+        200 : #000000,
+        300 : #000000,
+        400 : #000000,
+        500 : #000000,
+        600 : #000000,
+        700 : #000000,
+        800 : #000000,
+        900 : #ffffff,
+        A100 : #000000,
+        A200 : #000000,
+        A400 : #000000,
+        A700 : #000000,
+    )
+  );
+  
+  
+  $ewa-accent: (
+      50 : #e3e2e8,
+      100 : #b9b7c5,
+      200 : #8a879f,
+      300 : #5b5679,
+      400 : #37325c,
+      500 : #575757,
+      600 : #484848,
+      700 : #373737,
+      800 : #323232,
+      900 : #212121,
+      A100 : #c88e80,
+      A200 : #cd755f,
+      A400 : #ca573a,
+      A700 : #CC5232,
+      contrast: (
+          50 : #000000,
+          100 : #000000,
+          200 : #000000,
+          300 : #ffffff,
+          400 : #ffffff,
+          500 : #ffffff,
+          600 : #ffffff,
+          700 : #ffffff,
+          800 : #ffffff,
+          900 : #ffffff,
+          A100 : #ffffff,
+          A200 : #ffffff,
+          A400 : #ffffff,
+          A700 : #ffffff,
+      )
+  );
+  
+  $ewa-front-primary: mat.define-palette($ewa-primary);
+  $ewa-front-accent: mat.define-palette($ewa-accent);
+  
+  $ewa-front-warn: mat.define-palette(mat.$red-palette);
+  
+  
+  @font-face {
+    font-family: "cairo";
+    font-weight: 200;
+    src: url(/assets/font/cairo/Cairo-ExtraLight.ttf) format("truetype");
+  }
+  @font-face {
+    font-family: "cairo";
+    font-weight: 300;
+    src: url(/assets/font/cairo/Cairo-Light.ttf) format("truetype");
+  }
+  @font-face {
+    font-family: "cairo";
+    font-weight: 400;
+    src: url(/assets/font/cairo/Cairo-Regular.ttf) format("truetype");
+  }
+  
+  @font-face {
+    font-family: "cairo";
+    font-weight: 600;
+    src: url(/assets/font/cairo/Cairo-SemiBold.ttf) format("truetype");
+  }
+  @font-face {
+    font-family: "cairo";
+    font-weight: 700;
+    src: url(/assets/font/cairo/Cairo-Bold.ttf) format("truetype");
+  }
+  @font-face {
+    font-family: "cairo";
+    font-weight: 900;
+    src: url(/assets/font/cairo/Cairo-Black.ttf) format("truetype");
+  }
+  //  $kids-typography: mat.define-typography-config(
+  //     $font-family: 'Comic Sans',
+  //     $font-weight: 400,
+  //     $font-size: 1rem,
+  //     $line-height: 1,
+  //     $letter-spacing: normal,
+  //   );
+  $my-custom-level: mat.define-typography-level(
+    $font-family: 'Comic Sans',
+    $font-weight: 400,
+    $font-size: 1rem,
+    $line-height: 1,
+    $letter-spacing: normal,
+  );
+  $ewa-front-theme: mat.define-light-theme((
+    color: (
+      primary: $ewa-front-primary,
+      accent: $ewa-front-accent,
+      warn: $ewa-front-warn,
+    ),
+    // typography:$my-custom-level,
+  ));
+  
+  @include mat.all-component-themes($ewa-front-theme);
+  
+  
+  .mat-primary {
+      --mdc-protected-button-label-text-color: #fff !important;
+      --mdc-filled-button-label-text-color: #fafafa !important;    
+      --mdc-ewa-icon-color:  #fafafa !important;
+      --mat-mdc-ewa-color:  #fafafa !important;
+  }

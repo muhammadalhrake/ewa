@@ -1,0 +1,39 @@
+variables:
+  PROJECT_DIST_DIR: ./dist/* 
+
+image: node:lts
+
+before_script:
+  - "command -v ssh-agent >/dev/null || ( apt-get update -y && apt-get install openssh-client -y )"
+  - eval $(ssh-agent -s)
+  - echo "$SSH_PRIVATE_KEY" | tr -d '\r' | ssh-add -
+  - mkdir -p ~/.ssh
+  - chmod 700 ~/.ssh
+  - ssh-keyscan $SERVER_IP >> ~/.ssh/known_hosts
+  - chmod 644 ~/.ssh/known_hosts
+
+stages:
+  - build
+
+deploy_dev:
+  stage: build
+  only:
+    - dev
+
+  script:
+    - yarn
+    - NODE_OPTIONS=--max_old_space_size=4096 yarn run build --configuration=development
+
+
+deliver:
+  when: manual
+  
+  only:
+    - master
+  
+  stage: build
+
+  script:
+    - yarn
+    - NODE_OPTIONS=--max-old-space-size=4096 yarn build -c "production"
+    

@@ -1,0 +1,36 @@
+<div class="main-container">
+    <div class="logo">
+        <img src="../../../../assets/logo.svg" alt="">
+    </div>
+    <div class="menu">
+        <div class="item-container">
+            <a href="#" mat-button [ngClass]="{'active': activeButtonIndex === 0}" (click)="onTabClick(0)">HOME </a>
+            <img *ngIf=" activeButtonIndex === 0" src="../../../../assets/arrow-up.svg" alt="">
+        </div>
+        <div class="item-container">
+            <a href="#" mat-button [ngClass]="{'active': activeButtonIndex === 1}" (click)="onTabClick(1)">PRODUCTS</a>
+            <img *ngIf=" activeButtonIndex === 1" src="../../../../assets/arrow-up.svg" alt="">
+        </div>
+        <div class="item-container">
+            <a href="#" mat-button [ngClass]="{'active': activeButtonIndex === 2}" (click)="onTabClick(2)">CART</a>
+            <img *ngIf=" activeButtonIndex === 2" src="../../../../assets/arrow-up.svg" alt="">
+        </div>
+        <div class="item-container">
+            <a href="#" mat-button [ngClass]="{'active': activeButtonIndex === 3}" (click)="onTabClick(3)">FAVORITE</a>
+            <img *ngIf=" activeButtonIndex === 3" src="../../../../assets/arrow-up.svg" alt="">
+        </div>
+        
+        
+       
+
+    </div>
+    <div class="profile-section">
+        
+        <div class="icons">
+            <mat-icon>search</mat-icon>
+            <mat-icon>person</mat-icon>
+            <mat-icon>insert_chart</mat-icon>
+        </div>
+        <button mat-raised-button>Get App</button>
+    </div>
+</div>

@@ -1,0 +1,52 @@
+.container{
+    display: flex;
+    .main-img{
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        overflow: hidden;
+        object-fit: cover;
+        /* width: 77vw; */
+        /* height: 84vh;*/
+        img{
+            width: 60vw;
+            // object-fit: cover;
+        }
+    }
+    .middle{
+
+        width: 30rem;
+        margin: 6rem 1rem 3rem 8rem;
+        .head{
+            margin: auto;
+            font-weight: 700;
+            .up{
+                font-size: 2rem;
+                display: flex;
+                gap: 0.6rem;
+            }
+            .down{
+                font-size: 4rem;
+                display: flex;
+                gap: 0.6rem;
+                margin-bottom: 2rem;
+            }
+        }
+        .title{
+            font-size: 1.6rem;
+            margin-bottom: 1rem;
+        }
+    }
+    button{
+        background-color: #C0966B;
+        color: #E6E7E8;
+        padding: 0 2rem;
+    }
+
+    .left-side{
+        img{
+            width: 1.3rem;
+            margin: 3rem 1rem 1rem 2rem;
+        }
+    }
+}

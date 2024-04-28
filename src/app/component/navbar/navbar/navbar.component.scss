@@ -1,0 +1,46 @@
+.main-container{
+  display: flex;
+  justify-content: space-between;
+  margin: auto 1.5rem;
+}
+.menu{
+  display: flex;
+  gap: 4rem;
+  margin: auto;
+  padding: 0px 0rem 0rem 3rem;
+}
+.logo{
+  img{
+    width: 6rem;
+  }
+}
+.profile-section{
+  margin: auto 10px;
+  display: flex;
+  gap: 1rem;
+  button{
+    background-color: #C0966B;
+    color: #E6E7E8;
+    padding: 0 1rem;
+  }
+}
+.active{
+  color: #231F20 !important;
+}
+
+a{
+  color: gray !important;
+}
+.item-container{
+  display: grid;
+  img{
+    width: 10px;
+    margin: auto;
+  }
+}
+
+.icons{
+  margin: 7px auto;
+  display: flex;
+  gap: 1rem;
+}
